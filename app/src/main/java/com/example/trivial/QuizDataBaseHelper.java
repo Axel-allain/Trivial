@@ -97,6 +97,8 @@ public class QuizDataBaseHelper extends SQLiteOpenHelper {
         addQuestion(q3);
         Question q4 = new Question("Parmis ces appareils électro-ménagers, lequel consomme le plus ?", "Le réfrigérateur","Le four","Le sèche linge",2,Category.CONSOMMATION);
         addQuestion(q4);
+        Question q5 = new Question("Combien faut-il de temps à une canette en acier pour se dégrader ?", "1 à 2 ans","10 à 20 ans","80 à 100 ans",3,Category.TRI);
+        addQuestion(q5);
     }
 
     private void addQuestion(Question question){
@@ -129,28 +131,6 @@ public class QuizDataBaseHelper extends SQLiteOpenHelper {
         }
         c.close();
         return categoryList;
-    }
-
-    public ArrayList<Question> getAllQuestions() {
-        ArrayList<Question> questionList = new ArrayList<>();
-        db = getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM " + QuestionsTable.TABLE_NAME, null);
-
-        if (c.moveToFirst()){
-            do {
-                Question question = new Question();
-                question.setId(c.getInt(c.getColumnIndex(QuestionsTable._ID)));
-                question.setQuestion(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_QUESTION)));
-                question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION1)));
-                question.setOption2(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION2)));
-                question.setOption3(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION3)));
-                question.setAnswerNb(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_ANSWER_NB)));
-                question.setCategoryID(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_CATEGORY_ID)));
-                questionList.add(question);
-            } while (c.moveToNext());
-        }
-        c.close();
-        return questionList;
     }
 
     public ArrayList<Question> getQuestions(int categoryID) {
