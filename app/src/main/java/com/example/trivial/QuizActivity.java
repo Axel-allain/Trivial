@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
     public static final String EXTRA_SCORE = "extraScore";
@@ -67,13 +66,13 @@ public class QuizActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int categoryID = intent.getIntExtra(MainActivity.EXTRA_CATEGORY_ID, 0);
         String categoryName = intent.getStringExtra(MainActivity.EXTRA_CATEGORY_NAME);
-
-        textViewCategory.setText("Categorie: " + categoryName);
+        int nbQuestion = intent.getIntExtra(MainActivity.EXTRA_NB_QUESTION,1);
+        textViewCategory.setText("Catégorie: " + categoryName);
 
         if (savedInstanceState == null) {
             QuizDataBaseHelper dbHelper = QuizDataBaseHelper.getInstance(this);
             questionList = dbHelper.getQuestions(categoryID);
-            questionCountTotal = questionList.size();
+            questionCountTotal = nbQuestion;
             Collections.shuffle(questionList);
 
             showNextQuestion();
@@ -94,7 +93,7 @@ public class QuizActivity extends AppCompatActivity {
                     if(rb1.isChecked() || rb2.isChecked() || rb3.isChecked()) {
                         checkAnswer();
                     } else {
-                        Toast.makeText(QuizActivity.this, "Selectionne une des propositions", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(QuizActivity.this, "Selectionner une des propositions pour continuer", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     showNextQuestion();
@@ -146,15 +145,15 @@ public class QuizActivity extends AppCompatActivity {
         switch (currentQuestion.getAnswerNb()) {
             case 1:
                 rb1.setTextColor(Color.GREEN);
-                textViewQuestion.setText("La bonne réponses est la 1");
+                textViewQuestion.setText("La bonne réponse est la 1");
                 break;
             case 2:
                 rb2.setTextColor(Color.GREEN);
-                textViewQuestion.setText("La bonne réponses est la 2");
+                textViewQuestion.setText("La bonne réponse est la 2");
                 break;
             case 3:
                 rb3.setTextColor(Color.GREEN);
-                textViewQuestion.setText("La bonne réponses est la 3");
+                textViewQuestion.setText("La bonne réponse est la 3");
                 break;
         }
 
@@ -176,7 +175,7 @@ public class QuizActivity extends AppCompatActivity {
         if (backPressedTime + 2000 > System.currentTimeMillis()) {
             finishQuiz();
         } else {
-            Toast.makeText(this, "Appuie encore pour quitter", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Appuyer encore pour quitter", Toast.LENGTH_SHORT).show();
         }
         backPressedTime = System.currentTimeMillis();
     }

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -18,12 +19,15 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_QUIZ = 1;
     public static final String EXTRA_CATEGORY_ID = "extraCategoryID";
     public static final String EXTRA_CATEGORY_NAME = "extraCategoryName";
+    public static final String EXTRA_NB_QUESTION = "extraNbQuestion";
+
 
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String KEY_HIGHSCORE = "keyHighscore";
 
     private TextView textViewHighscore;
     private Spinner spinnerCategory;
+    private NumberPicker numberPickerNbQuestion;
     private int highscore;
 
 
@@ -36,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         spinnerCategory = findViewById(R.id.spinner_category);
         loadCategories();
         loadHighscore();
+        numberPickerNbQuestion = findViewById(R.id.number_picker_nb_question);
+        numberPickerNbQuestion.setMinValue(1);
+        numberPickerNbQuestion.setMaxValue(3);
 
         Button buttonStartQuiz = findViewById(R.id.button_start_quiz);
         buttonStartQuiz.setOnClickListener(new View.OnClickListener() {
@@ -51,10 +58,12 @@ public class MainActivity extends AppCompatActivity {
         Category selectedCategory = (Category) spinnerCategory.getSelectedItem();
         int categoryID = selectedCategory.getId();
         String categoryName = selectedCategory.getName();
+        int nbQuestion = numberPickerNbQuestion.getValue();
 
         Intent intent = new Intent(MainActivity.this, QuizActivity.class);
         intent.putExtra(EXTRA_CATEGORY_ID, categoryID);
         intent.putExtra(EXTRA_CATEGORY_NAME, categoryName);
+        intent.putExtra(EXTRA_NB_QUESTION, nbQuestion);
         startActivityForResult(intent, REQUEST_CODE_QUIZ);
     }
 

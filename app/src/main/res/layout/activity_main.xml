@@ -17,7 +17,7 @@
         android:layout_marginTop="20dp"/>
 
     <TextView
-        android:id="@+id/text_indicateur"
+        android:id="@+id/text_indicateur_categorie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
@@ -37,6 +37,17 @@
         android:text="Meilleur score: 0"
         android:textSize="20sp" />
 
+    <TextView
+        android:id="@+id/text_indicateur_nb_questions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/text_indicateur_categorie"
+        android:layout_toLeftOf="@id/number_picker_nb_question"
+        android:text="Max questions: "
+        android:layout_marginTop="100dp"
+        android:textSize="16sp" />
+
     <Button
         android:id="@+id/button_start_quiz"
         android:layout_width="wrap_content"
@@ -53,6 +64,14 @@
         android:layout_marginTop="16dp"
         android:layout_alignLeft="@+id/button_start_quiz" />
 
+    <NumberPicker
+        android:id="@+id/number_picker_nb_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/spinner_category"
+        android:layout_marginTop="16dp"
+        android:freezesText="true"/>
 
 
 </RelativeLayout>
