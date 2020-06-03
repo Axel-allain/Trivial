@@ -142,18 +142,17 @@ public class QuizActivity extends AppCompatActivity {
         rb2.setTextColor(Color.RED);
         rb3.setTextColor(Color.RED);
 
+        textViewQuestion.setText(currentQuestion.getTips());
+
         switch (currentQuestion.getAnswerNb()) {
             case 1:
                 rb1.setTextColor(Color.GREEN);
-                textViewQuestion.setText("La bonne réponse est la 1");
                 break;
             case 2:
                 rb2.setTextColor(Color.GREEN);
-                textViewQuestion.setText("La bonne réponse est la 2");
                 break;
             case 3:
                 rb3.setTextColor(Color.GREEN);
-                textViewQuestion.setText("La bonne réponse est la 3");
                 break;
         }
 

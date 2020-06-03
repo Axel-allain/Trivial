@@ -70,8 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/spinner_category"
-        android:layout_marginTop="16dp"
-        android:freezesText="true"/>
+        android:layout_marginTop="16dp"/>
 
 
 </RelativeLayout>
