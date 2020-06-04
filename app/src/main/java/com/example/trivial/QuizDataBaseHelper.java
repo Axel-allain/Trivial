@@ -29,6 +29,7 @@ public class QuizDataBaseHelper extends SQLiteOpenHelper {
         return instance;
     }
 
+    // création databases
     @Override
     public void onCreate(SQLiteDatabase db) {
         this.db = db;
@@ -59,6 +60,7 @@ public class QuizDataBaseHelper extends SQLiteOpenHelper {
         fillQuestionsTable();
     }
 
+    // mise a jour des databases
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + CategoriesTable.TABLE_NAME);
@@ -72,6 +74,7 @@ public class QuizDataBaseHelper extends SQLiteOpenHelper {
         db.setForeignKeyConstraintsEnabled(true);
     }
 
+    // repmlissage des tables des databases
     private void fillCategoriesTable() {
         Category c1 = new Category("Générale");
         addCategory(c1);
@@ -83,12 +86,14 @@ public class QuizDataBaseHelper extends SQLiteOpenHelper {
         addCategory(c4);
     }
 
+    //ajout catégories
     private void addCategory(Category category) {
         ContentValues cv = new ContentValues();
         cv.put(CategoriesTable.COLUMN_NAME, category.getName());
         db.insert(CategoriesTable.TABLE_NAME, null, cv);
     }
 
+    // remplissage database
     private void fillQuestionsTable() {
         Question q1 = new Question("Il existe dans l'océan Pacifique une énorme nappe de déchets de la taille de ... ?", "17 terrains de foot","La France","L'Europe",2,"Conseil a venir...",Category.POLLUTION);
         addQuestion(q1);
@@ -125,6 +130,7 @@ public class QuizDataBaseHelper extends SQLiteOpenHelper {
         Question q17 = new Question("Dans quelle poubelle jette-t-on les papiers, journaux, magazines ?", "Verte","Bleue","Jaune",2,"Conseil a venir...",Category.TRI);
         addQuestion(q17);
     }
+
 
     private void addQuestion(Question question){
         ContentValues cv = new ContentValues();

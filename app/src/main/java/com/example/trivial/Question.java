@@ -14,6 +14,7 @@ public class Question implements Parcelable {
 
     private int categoryID;
 
+    // constructeurs
     public Question(){}
 
     public Question(String question, String option1, String option2, String option3, int answerNb, String tips, int categoryID) {
@@ -66,6 +67,7 @@ public class Question implements Parcelable {
         }
     };
 
+    //get and set
     public int getId() { return id; }
 
     public void setId(int id) { this.id = id; }
