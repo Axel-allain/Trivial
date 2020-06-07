@@ -95,39 +95,39 @@ public class QuizDataBaseHelper extends SQLiteOpenHelper {
 
     // remplissage database
     private void fillQuestionsTable() {
-        Question q1 = new Question("Il existe dans l'océan Pacifique une énorme nappe de déchets de la taille de ... ?", "17 terrains de foot","La France","L'Europe",2,"Conseil a venir...",Category.POLLUTION);
+        Question q1 = new Question("Il existe dans l'océan Pacifique une énorme nappe de déchets de la taille de ... ?", "17 terrains de foot","3 fois la France","L'Europe",2,"Soit un peu moins de 2 millions de km²",Category.POLLUTION);
         addQuestion(q1);
-        Question q2 = new Question("Où finissent la plupart de nos déchets", "Dans l'Océan","Sous terre","Dans l'espace",1,"Conseil a venir...",Category.POLLUTION);
+        Question q2 = new Question("Où finissent la plupart de nos déchets ?", "Dans l'océan","Sous terre","Dans l'espace",1,"Et ils sont extrêmement dévastateurs",Category.POLLUTION);
         addQuestion(q2);
-        Question q3 = new Question("Parmis ces dechets, lequel n'est pas recyclable ?", "Un sac plastique","Une boite à chaussures en carton","Un pot de confiture en verre",1,"Conseil a venir...",Category.TRI);
+        Question q3 = new Question("Parmis ces déchets, lequel n'est pas recyclable ?", "Un sac plastique","Une boite à chaussures en carton","Un pot de confiture en verre",1,"Le plastique n'est évidemment pas recyclable",Category.TRI);
         addQuestion(q3);
-        Question q4 = new Question("Parmis ces appareils électro-ménagers, lequel consomme le plus ?", "Le réfrigérateur","Le four","Le sèche linge",2,"Conseil a venir...",Category.CONSOMMATION);
+        Question q4 = new Question("Parmis ces appareils électro-ménagers, lequel consomme le plus ?", "Le réfrigérateur","Le four","Le sèche linge",2,"Pensez à débranchez les appareils que vous n'utiliserez pas pendant longtemps",Category.CONSOMMATION);
         addQuestion(q4);
-        Question q5 = new Question("Combien faut-il de temps à une canette en acier pour se dégrader ?", "1 à 2 ans","10 à 20 ans","80 à 100 ans",3,"Conseil a venir...",Category.GENERALE);
+        Question q5 = new Question("Combien faut-il de temps à une canette en acier pour se dégrader ?", "1 à 2 ans","10 à 20 ans","80 à 100 ans",3,"Et c'est bien plus quand il s'agit du verre",Category.GENERALE);
         addQuestion(q5);
-        Question q6 = new Question("Depuis quand existe-t-il des lois en France qui protège l'environnement ?", "1945","1975","2000",2,"Conseil a venir...",Category.GENERALE);
+        Question q6 = new Question("Depuis quand existe-t-il des lois en France qui protège l'environnement ?", "1945","1975","2000",2,"Oui, seulement depuis 1975",Category.GENERALE);
         addQuestion(q6);
-        Question q7 = new Question("Dans quelle poubelle jette-t-on le plastique et carton ?", "Verte","Bleue","Jaune",3,"Conseil a venir...",Category.TRI);
+        Question q7 = new Question("Dans quelle poubelle jette-t-on le plastique et carton ?", "Verte","Bleue","Jaune",3,"Vous pouvez trouver des indications sur les poubelles",Category.TRI);
         addQuestion(q7);
-        Question q8 = new Question("Quel est le type de transport de marchandises le plus économique ?", "Fluvial","Routier","Ferroviaire",1,"Conseil a venir...",Category.GENERALE);
+        Question q8 = new Question("Quel est le type de transport de marchandises le plus économique ?", "Fluvial","Routier","Ferroviaire",1,"Les porte-conteneurs consomment beaucoup, mais transportent aussi beaucoup",Category.GENERALE);
         addQuestion(q8);
-        Question q9 = new Question("Qu'est ce que la symbiose ?", "Une algue","Une maladie due a un champignon","Une association à bénéfice réciproque",3,"Conseil a venir...",Category.GENERALE);
+        Question q9 = new Question("Qu'est ce que la symbiose ?", "Une algue","Une maladie due a un champignon","Une association à bénéfice réciproque",3,"Certains animaux dépendent très fortement de ces symbioses",Category.GENERALE);
         addQuestion(q9);
-        Question q10 = new Question("Dans lequels de ces objets trouve-t-on des métaux lourds ?", "Une brique de jus de fruits","Les boîtes de conserves","Les piles",3,"Conseil a venir...",Category.GENERALE);
+        Question q10 = new Question("Dans lequels de ces objets trouve-t-on des métaux lourds ?", "Une brique de jus de fruits","Les boîtes de conserves","Les piles",3,"Dans ce cas, il s'agit du manganèse et du zinc contenu dans la pile",Category.GENERALE);
         addQuestion(q10);
-        Question q11 = new Question("Quelle est la consommation moyenne d'eau par personne et par jour en France ?", "80 Litres","160 Litres","240 Litres",2,"Conseil a venir...",Category.CONSOMMATION);
+        Question q11 = new Question("Quelle est la consommation moyenne d'eau par personne et par jour en France ?", "80 L","160 L","240 L",2,"Sachant que bains et douches prennent 40%",Category.CONSOMMATION);
         addQuestion(q11);
-        Question q12 = new Question("Combien de litres d'eau gaspille un robinet qui goutte toutes les 4 secondes ?", "160","1 600","16 000",2,"Conseil a venir...",Category.CONSOMMATION);
+        Question q12 = new Question("Combien de litres d'eau gaspille un robinet qui goutte toutes les 4 secondes ?", "160 L/an","1 600 L/an","16 000 L/an",2,"Soit à peu près 500€ en un an",Category.CONSOMMATION);
         addQuestion(q12);
-        Question q13 = new Question("Diminuer son chauffage de 1 degré permet de réaliser une economie de... ?", "3%","5%","7%",1,"Conseil a venir...",Category.GENERALE);
+        Question q13 = new Question("Diminuer son chauffage de 1 degré permet de réaliser une economie de... ?", "3%","5%","7%",3,"C'est pas négligeable",Category.GENERALE);
         addQuestion(q13);
-        Question q14 = new Question("En 80 ans, la population française a multiplié sa production de déchets par... ?", "3","6","9",2,"Conseil a venir...",Category.GENERALE);
+        Question q14 = new Question("En 80 ans, la population française a multiplié sa production de déchets par... ?", "3","6","9",2,"On est certes plus nombreux, mais pas 6 fois plus",Category.GENERALE);
         addQuestion(q14);
-        Question q15 = new Question("Quelle polluants cause le déces de plus de 400 000 personnes par an en Europe ?", "l'ozone","Le dioxyde d'azote","Les particules fines",3,"Conseil a venir...",Category.POLLUTION);
+        Question q15 = new Question("Quel polluant cause le décès de plus de 400 000 personnes par an en Europe ?", "l'ozone","Le dioxyde d'azote","Les particules fines",3,"Pour éviter ce problème, pensez à aérer votre habitation tôt le matin ou tard le soir",Category.POLLUTION);
         addQuestion(q15);
-        Question q16 = new Question("Dans quelle poubelle jette-t-on le verre ?", "Verte","Bleue","Jaune",1,"Conseil a venir...",Category.TRI);
+        Question q16 = new Question("Dans quelle poubelle jette-t-on le verre ?", "Verte","Bleue","Jaune",1,"Vous pouvez trouver des indications sur les poubelles",Category.TRI);
         addQuestion(q16);
-        Question q17 = new Question("Dans quelle poubelle jette-t-on les papiers, journaux, magazines ?", "Verte","Bleue","Jaune",2,"Conseil a venir...",Category.TRI);
+        Question q17 = new Question("Dans quelle poubelle jette-t-on les papiers, journaux, magazines ?", "Verte","Bleue","Jaune",2,"Vous pouvez trouver des indications sur les poubelles",Category.TRI);
         addQuestion(q17);
     }
 
